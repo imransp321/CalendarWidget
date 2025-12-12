@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: transparent;
+    overflow: hidden;
+}
+
+.widget-container {
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.title-bar {
+    background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    -webkit-app-region: drag;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    -webkit-app-region: no-drag;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.auth-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 400px;
+}
+
+.auth-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.auth-content h3 {
+    margin-bottom: 12px;
+    color: #333;
+    font-size: 18px;
+}
+
+.auth-content p {
+    margin-bottom: 24px;
+    color: #666;
+    font-size: 14px;
+}
+
+.login-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.login-btn:hover {
+    background: #106ebe;
+}
+
+.calendar-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.date-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.current-date {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.meeting-count {
+    font-size: 12px;
+    color: #666;
+}
+
+.meetings-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.meeting-item {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.meeting-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.meeting-item.upcoming {
+    border-left: 4px solid #0078d4;
+}
+
+.meeting-item.current {
+    border-left: 4px solid #107c10;
+    background: #f0f9f0;
+}
+
+.meeting-item.past {
+    border-left: 4px solid #999;
+    opacity: 0.7;
+}
+
+.meeting-time {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0078d4;
+    margin-bottom: 4px;
+}
+
+.meeting-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.meeting-location {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.meeting-organizer {
+    font-size: 11px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.no-meetings {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+}
+
+.no-meetings-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #666;
+}
+
+.spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #0078d4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    background: #fee;
+    color: #c33;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-size: 13px;
+    border: 1px solid #fcc;
+}
+
+.footer {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.logout-btn {
+    background: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Scrollbar styling */
+.meetings-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.meetings-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.meetings-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.meetings-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+

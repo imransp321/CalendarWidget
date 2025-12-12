@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlook Calendar Widget</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="widget-container">
+        <div class="title-bar">
+            <div class="title">📅 Today's Meetings</div>
+            <div class="controls">
+                <button class="control-btn" id="refreshBtn" title="Refresh">🔄</button>
+                <button class="control-btn" id="minimizeBtn" title="Minimize">➖</button>
+                <button class="control-btn" id="closeBtn" title="Close">✕</button>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div id="authSection" class="auth-section">
+                <div class="auth-content">
+                    <h3>Connect to Microsoft Outlook</h3>
+                    <p>Click the button below to sign in and view your calendar</p>
+                    <button id="loginBtn" class="login-btn">Sign in with Microsoft</button>
+                </div>
+            </div>
+
+            <div id="calendarSection" class="calendar-section" style="display: none;">
+                <div class="date-header">
+                    <div id="currentDate" class="current-date"></div>
+                    <div id="meetingCount" class="meeting-count"></div>
+                </div>
+                
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Loading meetings...</p>
+                </div>
+
+                <div id="meetingsList" class="meetings-list"></div>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+                <div class="footer">
+                    <button id="logoutBtn" class="logout-btn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="calendar.js"></script>
+    <script src="renderer.js"></script>
+</body>
+</html>
+
