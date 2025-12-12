@@ -17,8 +17,8 @@
     "widget",
     "electron"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Imran",
+  "license": "Copyright © 2025 Imran. All rights reserved.",
   "devDependencies": {
     "electron": "^27.0.0",
     "electron-builder": "^24.9.1"
