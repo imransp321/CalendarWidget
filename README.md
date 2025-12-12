@@ -2,6 +2,12 @@
 
 A beautiful desktop calendar widget that displays your Microsoft Outlook meetings for the day. Built with Electron and Microsoft Graph API.
 
+## 📥 Installation & Uninstallation
+
+**For end users:** See [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md) for complete step-by-step installation and uninstallation instructions for:
+- ✅ macOS (Intel & Apple Silicon)
+- ✅ Windows 10/11
+
 ## Features
 
 - 📅 View all meetings scheduled for today
